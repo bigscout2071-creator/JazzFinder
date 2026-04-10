@@ -15,21 +15,22 @@ export interface ITunesResult {
   primaryGenreName: string;
 }
 
+/**
+ * 프록시 서버 API(/api/search)를 호출하여 보안과 성능을 높입니다.
+ */
 export async function searchJazz(term: string, entity: 'song' | 'album' | 'musicArtist' = 'song') {
   if (!term) return [];
   
-  // Specifically target jazz genre in the search if needed, 
-  // but usually adding "jazz" to the term is more flexible
-  const query = encodeURIComponent(`${term} jazz`);
-  const url = `https://itunes.apple.com/search?term=${query}&entity=${entity}&limit=20&media=music`;
+  const query = encodeURIComponent(term);
+  const url = `/api/search?term=${query}&entity=${entity}`;
 
   try {
     const response = await fetch(url);
-    if (!response.ok) throw new Error('Failed to fetch from iTunes');
+    if (!response.ok) throw new Error('Failed to fetch results');
     const data = await response.json();
-    return data.results as ITunesResult[];
+    return (data.results || []) as ITunesResult[];
   } catch (error) {
-    console.error('iTunes Search Error:', error);
+    console.error('Search Client Error:', error);
     return [];
   }
 }
