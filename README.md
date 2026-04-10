@@ -1,88 +1,49 @@
-# JazzFinder
+# 🎷 JazzFinder
 
-A modern Next.js web application for discovering, streaming, and enjoying jazz music.
+JazzFinder is a beautiful, Spotify-style web application for searching and playing jazz music using the iTunes Search API.
 
-## Features
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fbigscout2071-creator%2FJazzFinder)
 
-- 🎵 Jazz music catalog with search functionality
-- 🤖 Personalized music recommendations
-- ▶️ Real-time audio playback
-- 🔐 User authentication
-- 💾 Watchlist management
+## ✨ Features
 
-## Tech Stack
+- **Real-time Jazz Search**: Search for tracks, albums, and artists.
+- **Midnight Jazz Club UI**: Elegant dark-themed design with amber accents.
+- **Audio Previews**: 30-second high-quality audio previews.
+- **PWA Support**: Install it on your mobile device or desktop as a standalone app.
+- **Responsive Design**: Optimized for both mobile and desktop screens.
 
-- **Frontend**: React 19 + Next.js 15
-- **Language**: TypeScript
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 15
 - **Styling**: Tailwind CSS
-- **Package Manager**: npm
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **API**: iTunes Search API (Proxy through Next.js API Routes)
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
-
-- Node.js 18+ 
-- npm
-
-### Installation
-
-1. Navigate to the project directory:
-```bash
-cd JazzFinder
-```
-
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bigscout2071-creator/JazzFinder.git
+   ```
 2. Install dependencies:
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### Development
+## 🔐 Security
 
-Start the development server:
-```bash
-npm run dev
-```
+- **Server-Side API Route**: iTunes API calls are proxied through `/api/search` to protect client communication.
+- **Secure Headers**: Configured with strict security headers (X-Frame-Options, etc.).
+- **Optimized Image Patterns**: Only trusted iTunes image domains are allowed.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+## 📱 Installation (PWA)
 
-### Building for Production
-
-Build the application:
-```bash
-npm run build
-```
-
-Start the production server:
-```bash
-npm start
-```
-
-### Linting
-
-Check code quality:
-```bash
-npm run lint
-```
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── layout.tsx      # Root layout
-│   ├── page.tsx        # Home page
-│   └── globals.css     # Global styles
-├── components/         # React components
-└── lib/               # Utility functions
-```
-
-## Configuration Files
-
-- `tsconfig.json` - TypeScript configuration
-- `tailwind.config.ts` - Tailwind CSS configuration
-- `next.config.ts` - Next.js configuration
-- `.eslintrc.json` - ESLint configuration
-
-## License
-
-MIT
+To install this as an app:
+- **iOS (Safari)**: Tap the Share button and select "Add to Home Screen".
+- **Android/Chrome**: Tap the 3 dots (menu) or the install icon in the address bar and select "Install App".
